@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://bfq7ia6b6ln5o"]
+
+[ext_resource type="Script" uid="uid://dldkjb4od0y7i" path="res://Scripts/AIController.gd" id="1_bknfx"]
+[ext_resource type="PackedScene" uid="uid://c2tcjs26j25ww" path="res://assets/Alien/alien-bug.glb" id="1_s2lx4"]
+[ext_resource type="Script" uid="uid://d0im61hfshfpv" path="res://Scripts/StateMachine.gd" id="3_bcaem"]
+[ext_resource type="Script" uid="uid://duwkdsku57bft" path="res://Scripts/WanderState.gd" id="4_ujwi0"]
+[ext_resource type="Script" uid="uid://cr0fwhc6khj43" path="res://Scripts/ChaseState.gd" id="5_sl2xk"]
+[ext_resource type="Script" uid="uid://dudqtcvsv2jm1" path="res://Scripts/FleeState.gd" id="6_lj8r6"]
+[ext_resource type="Script" uid="uid://cib57r66a55vu" path="res://Scripts/AttackState.gd" id="7_wrlxx"]
+[ext_resource type="Script" uid="uid://btdsngqamna41" path="res://Scripts/health.gd" id="8_mwxe1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bknfx"]
+height = 1.0
+
+[node name="Scorpion" type="CharacterBody3D" groups=["enemy"]]
+script = ExtResource("1_bknfx")
+
+[node name="alien-bug" parent="." instance=ExtResource("1_s2lx4")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_bknfx")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state")]
+script = ExtResource("3_bcaem")
+default_state = NodePath("Wander")
+
+[node name="Wander" type="Node" parent="StateMachine"]
+script = ExtResource("4_ujwi0")
+controller_path = NodePath("../..")
+
+[node name="Chase" type="Node" parent="StateMachine"]
+script = ExtResource("5_sl2xk")
+controller_path = NodePath("../..")
+
+[node name="Flee" type="Node" parent="StateMachine"]
+script = ExtResource("6_lj8r6")
+controller_path = NodePath("../..")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("7_wrlxx")
+controller_path = NodePath("../..")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("8_mwxe1")
+max = 10
+metadata/_custom_type_script = "uid://btdsngqamna41"
+
+[connection signal="navigation_finished" from="NavigationAgent3D" to="StateMachine" method="_on_navigation_agent_3d_navigation_finished"]
+[connection signal="target_reached" from="NavigationAgent3D" to="StateMachine" method="_on_navigation_agent_3d_target_reached"]

@@ -1,0 +1,207 @@
+[gd_scene load_steps=11 format=3 uid="uid://cdk6hwb4hi2wc"]
+
+[ext_resource type="Script" uid="uid://b0c02p6ckmpdq" path="res://Player/player.gd" id="1_2f8j2"]
+[ext_resource type="PackedScene" uid="uid://c3f340m4vilh4" path="res://assets/Espada PS1.fbx" id="2_4ntmi"]
+[ext_resource type="PackedScene" uid="uid://c7uiqixbosauj" path="res://UI/healthbar.tscn" id="4_gwnis"]
+[ext_resource type="Script" uid="uid://cke6456qmt5a4" path="res://Scripts/PlayerHealth.gd" id="4_k53q1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3rsb5"]
+radius = 0.3
+height = 1.8
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4ntmi"]
+points = PackedVector3Array(-9.67493e-05, -5.66176e-05, 8.61324e-05, 0.00110671, 6.09754e-07, 0.00730687, 0.000246783, 0.000115244, 0.00931387, -0.000154078, -0.000228659, 0.00742074, -0.00112866, 6.09754e-07, 0.00730687, -3.9421e-05, 0.000115244, 0.000430506, 0.000132126, 0.000229878, 0.00742074, -9.67493e-05, -0.00011398, 0.00942866, 0.000132126, -0.00011398, 0.000659163, 0.000877394, -0.00011398, 0.00730687, -0.000842017, 0.000115244, 0.00730687, 0.000877394, 0.000115244, 0.00713561, 0.000246783, 5.79268e-05, 0.000545297, -0.000842017, -0.00011398, 0.00702082, -0.000211406, 0.000115244, 0.00937126, -9.67493e-05, -0.00011398, 0.000545297, -0.000154078, 0.000229878, 0.00719301, 0.000132126, -0.000228659, 0.00719301, 0.000246783, -0.00011398, 0.00931387, -0.000211406, 5.79268e-05, 0.000430506, 0.000132126, 0.000115244, 0.000659163, 0.000246783, -5.66176e-05, 0.000545297, -0.000211406, -0.00011398, 0.00937126, -0.000211406, -5.66176e-05, 0.000430506, 0.00104938, 5.79268e-05, 0.0072504, -0.000842017, 0.000115244, 0.00702082, -9.67493e-05, 0.000115244, 0.000545297, -0.000842017, -0.00011398, 0.00730687, -0.00112866, 6.09754e-07, 0.00719301, 0.00110671, 6.09754e-07, 0.00713561, 7.4798e-05, 5.79268e-05, 2.87369e-05, 0.000877394, -0.00011398, 0.00713561)
+
+[sub_resource type="Animation" id="Animation_btcbx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera/WeaponPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera/WeaponPivot/Espada PS1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0791931, 0.00120735, -0.837401)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera/WeaponPivot/Espada PS1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.766601, -2.99982, 2.72172)]
+}
+
+[sub_resource type="Animation" id="Animation_gwnis"]
+resource_name = "player_attack"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera/WeaponPivot/Espada PS1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.37198, 0.00120735, -0.403223)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera/WeaponPivot/Espada PS1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5708, -1.33869, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera/WeaponPivot:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(0.0444376, 0.0193561, 0.172373), Vector3(0.0444376, 2.39573, 0.172373)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera/WeaponPivot:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.00135764, -0.288532, 0.00375789)]
+}
+
+[sub_resource type="Animation" id="Animation_4ntmi"]
+resource_name = "player_idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera/WeaponPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera/WeaponPivot/Espada PS1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(-0.0791931, 0.00120735, -0.837401), Vector3(-0.0791931, -0.100559, -0.837401)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera/WeaponPivot/Espada PS1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(0.766601, -2.99982, 2.72172), Vector3(0.956312, -2.96413, 2.76853)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera/WeaponPivot:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0885549, -0.00372601, 0.0855362)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_btcbx"]
+_data = {
+&"RESET": SubResource("Animation_btcbx"),
+&"player_attack": SubResource("Animation_gwnis"),
+&"player_idle": SubResource("Animation_4ntmi")
+}
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_2f8j2")
+
+[node name="CShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1.08553, 0)
+shape = SubResource("CapsuleShape3D_3rsb5")
+debug_color = Color(0.0150389, 0.405437, 1, 0.784314)
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+fov = 80.0
+
+[node name="WeaponPivot" type="Node3D" parent="Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00135764, -0.288532, 0.00375789)
+
+[node name="Espada PS1" parent="Camera/WeaponPivot" instance=ExtResource("2_4ntmi")]
+transform = Transform3D(0.950425, 0.542364, -0.111951, 0.322976, -0.723482, -0.76306, -0.449864, 0.626432, -0.784351, -0.0791931, 0.00120735, -0.837401)
+
+[node name="Hitbox" type="Area3D" parent="Camera/WeaponPivot/Espada PS1"]
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera/WeaponPivot/Espada PS1/Hitbox"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0.000889577, 0.00711608, -0.00169557)
+shape = SubResource("ConvexPolygonShape3D_4ntmi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_btcbx")
+}
+autoplay = "player_idle"
+
+[node name="PlayerHealth" type="Node" parent="."]
+script = ExtResource("4_k53q1")
+current = 20
+max = 20
+post_death_action = 1
+
+[node name="Healthbar" parent="PlayerHealth" instance=ExtResource("4_gwnis")]
+
+[connection signal="area_entered" from="Camera/WeaponPivot/Espada PS1/Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Camera/WeaponPivot/Espada PS1/Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
