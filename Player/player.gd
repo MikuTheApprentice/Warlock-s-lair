@@ -1,6 +1,7 @@
 class_name Player extends CharacterBody3D
 
 #@onready var healthbar = $Healthbar
+#This is also a git test
 
 @export_range(0, 100, 1) var damage: float = 5
 
