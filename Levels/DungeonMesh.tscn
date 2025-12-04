@@ -1,0 +1,121 @@
+[gd_scene load_steps=7 format=3 uid="uid://dywr7d3453vfe"]
+
+[ext_resource type="Script" uid="uid://bfeiuo5svvf4f" path="res://addons/level_block/level_block_node.gd" id="1_i1na8"]
+[ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="2_qfufe"]
+[ext_resource type="Texture2D" uid="uid://djhy80eyqjqpv" path="res://addons/SimpleDungeons/sample_assets/kenney-dark-grey-checkboard-cc0.png" id="3_mdgtq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8irq7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tcf24"]
+albedo_texture = ExtResource("3_mdgtq")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dhxfs"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="DungeonMesh" type="Node3D"]
+
+[node name="LevelBlock" type="Node3D" parent="."]
+script = ExtResource("1_i1na8")
+material = ExtResource("2_qfufe")
+metadata/_custom_type_script = "uid://bfeiuo5svvf4f"
+
+[node name="Platform" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("BoxMesh_8irq7")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_tcf24")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/MeshInstance3D"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Platform/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dhxfs")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Platform"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 2)
+mesh = SubResource("BoxMesh_8irq7")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_tcf24")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/MeshInstance3D2"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Platform/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dhxfs")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Platform"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2, 0, 2)
+mesh = SubResource("BoxMesh_8irq7")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_tcf24")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/MeshInstance3D3"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Platform/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dhxfs")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Platform"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2, 0, 0)
+mesh = SubResource("BoxMesh_8irq7")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_tcf24")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/MeshInstance3D4"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Platform/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dhxfs")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Platform"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2, 0, -2)
+mesh = SubResource("BoxMesh_8irq7")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_tcf24")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/MeshInstance3D5"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Platform/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dhxfs")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Platform"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -2)
+mesh = SubResource("BoxMesh_8irq7")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_tcf24")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/MeshInstance3D6"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Platform/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dhxfs")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Platform"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2, 0, -2)
+mesh = SubResource("BoxMesh_8irq7")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_tcf24")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/MeshInstance3D7"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Platform/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dhxfs")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Platform"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2, 0, 0)
+mesh = SubResource("BoxMesh_8irq7")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_tcf24")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/MeshInstance3D8"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Platform/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dhxfs")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Platform"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2, 0, 2)
+mesh = SubResource("BoxMesh_8irq7")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_tcf24")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/MeshInstance3D9"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Platform/MeshInstance3D9/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dhxfs")
