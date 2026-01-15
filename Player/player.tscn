@@ -201,6 +201,14 @@ max = 20
 post_death_action = 1
 
 [node name="Healthbar" parent="PlayerHealth" instance=ExtResource("4_gwnis")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -43.0
+offset_right = 375.0
+offset_bottom = -19.0
+grow_vertical = 0
 
 [connection signal="area_entered" from="Camera/WeaponPivot/Espada PS1/Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Camera/WeaponPivot/Espada PS1/Hitbox" to="." method="_on_hitbox_body_entered"]

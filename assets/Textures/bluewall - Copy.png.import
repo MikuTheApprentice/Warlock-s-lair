@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c83ygof5yf42w"
-path.s3tc="res://.godot/imported/TEX_Metal_01.png-ef87138c2c89a5d2b5424173cbb96370.s3tc.ctex"
+uid="uid://3klj1k4frcjo"
+path.s3tc="res://.godot/imported/bluewall - Copy.png-7472d880a390091990b34ac6dceaa603.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/PSX_Dungeon/Textures/TEX_Metal_01.png"
-dest_files=["res://.godot/imported/TEX_Metal_01.png-ef87138c2c89a5d2b5424173cbb96370.s3tc.ctex"]
+source_file="res://assets/Textures/bluewall - Copy.png"
+dest_files=["res://.godot/imported/bluewall - Copy.png-7472d880a390091990b34ac6dceaa603.s3tc.ctex"]
 
 [params]
 

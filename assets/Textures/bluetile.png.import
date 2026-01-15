@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c83ygof5yf42w"
-path.s3tc="res://.godot/imported/TEX_Metal_01.png-ef87138c2c89a5d2b5424173cbb96370.s3tc.ctex"
+uid="uid://cabgdqf5boxh"
+path.s3tc="res://.godot/imported/bluetile.png-edeca7da3c25d9f22c1325853f581534.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/PSX_Dungeon/Textures/TEX_Metal_01.png"
-dest_files=["res://.godot/imported/TEX_Metal_01.png-ef87138c2c89a5d2b5424173cbb96370.s3tc.ctex"]
+source_file="res://assets/Textures/bluetile.png"
+dest_files=["res://.godot/imported/bluetile.png-edeca7da3c25d9f22c1325853f581534.s3tc.ctex"]
 
 [params]
 
