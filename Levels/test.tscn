@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://brthqdkq7cb7r"]
+
+[sub_resource type="GDScript" id="GDScript_yxlf1"]
+script/source = "extends Node2D
+
+func _ready() -> void:
+	print(Global.testNum)
+"
+
+[node name="Test" type="Node2D"]
+script = SubResource("GDScript_yxlf1")

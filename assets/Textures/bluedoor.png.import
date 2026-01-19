@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxetu25oeho8x"
-path.s3tc="res://.godot/imported/Doors_Map.png-c85166e53636ce1afec8325f73f4ad9e.s3tc.ctex"
+uid="uid://be5y85udo0obg"
+path.s3tc="res://.godot/imported/bluedoor.png-407a606c6d7c55f6043278deaa9a4d30.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/PSX_Dungeon/Textures/Doors_Map.png"
-dest_files=["res://.godot/imported/Doors_Map.png-c85166e53636ce1afec8325f73f4ad9e.s3tc.ctex"]
+source_file="res://assets/Textures/bluedoor.png"
+dest_files=["res://.godot/imported/bluedoor.png-407a606c6d7c55f6043278deaa9a4d30.s3tc.ctex"]
 
 [params]
 

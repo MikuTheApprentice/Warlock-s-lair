@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm2nxlt0odtjb"]
+
+[ext_resource type="PackedScene" uid="uid://4wsmyqyga1ok" path="res://assets/Wizardus Maximus/Wizardus Maximus.glb" id="1_yhfn2"]
+
+[node name="Root Scene" instance=ExtResource("1_yhfn2")]
+
+[node name="Skeleton3D" parent="RootNode/Armature" index="0"]
+bones/28/rotation = Quaternion(-0.684, -0.082, -0.085, 0.72)
+bones/29/rotation = Quaternion(0.009, 0.001, 0.11, -0.994)
+bones/41/rotation = Quaternion(-0.684, 0.082, 0.085, 0.72)

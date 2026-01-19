@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://stmnwgyijvw4"]
+
+[ext_resource type="Script" uid="uid://c4ujagx1cos08" path="res://UI/interaction_label.gd" id="1_qnmcs"]
+
+[node name="InteractionLabel" type="Node2D"]
+script = ExtResource("1_qnmcs")
+
+[node name="Label" type="Label" parent="."]
+z_index = 20
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 505.0
+offset_top = 750.0
+offset_right = 818.0
+offset_bottom = 805.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "[E] TO INTERACT"
+horizontal_alignment = 1
+vertical_alignment = 1

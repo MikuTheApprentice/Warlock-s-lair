@@ -1,13 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdk6hwb4hi2wc"]
+[gd_scene load_steps=12 format=3 uid="uid://cdk6hwb4hi2wc"]
 
 [ext_resource type="Script" uid="uid://b0c02p6ckmpdq" path="res://Player/player.gd" id="1_2f8j2"]
 [ext_resource type="PackedScene" uid="uid://c3f340m4vilh4" path="res://assets/Espada PS1.fbx" id="2_4ntmi"]
 [ext_resource type="PackedScene" uid="uid://c7uiqixbosauj" path="res://UI/healthbar.tscn" id="4_gwnis"]
 [ext_resource type="Script" uid="uid://cke6456qmt5a4" path="res://Scripts/PlayerHealth.gd" id="4_k53q1"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3rsb5"]
-radius = 0.3
-height = 1.8
+[ext_resource type="PackedScene" uid="uid://stmnwgyijvw4" path="res://UI/interaction_label.tscn" id="5_k53q1"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4ntmi"]
 points = PackedVector3Array(-9.67493e-05, -5.66176e-05, 8.61324e-05, 0.00110671, 6.09754e-07, 0.00730687, 0.000246783, 0.000115244, 0.00931387, -0.000154078, -0.000228659, 0.00742074, -0.00112866, 6.09754e-07, 0.00730687, -3.9421e-05, 0.000115244, 0.000430506, 0.000132126, 0.000229878, 0.00742074, -9.67493e-05, -0.00011398, 0.00942866, 0.000132126, -0.00011398, 0.000659163, 0.000877394, -0.00011398, 0.00730687, -0.000842017, 0.000115244, 0.00730687, 0.000877394, 0.000115244, 0.00713561, 0.000246783, 5.79268e-05, 0.000545297, -0.000842017, -0.00011398, 0.00702082, -0.000211406, 0.000115244, 0.00937126, -9.67493e-05, -0.00011398, 0.000545297, -0.000154078, 0.000229878, 0.00719301, 0.000132126, -0.000228659, 0.00719301, 0.000246783, -0.00011398, 0.00931387, -0.000211406, 5.79268e-05, 0.000430506, 0.000132126, 0.000115244, 0.000659163, 0.000246783, -5.66176e-05, 0.000545297, -0.000211406, -0.00011398, 0.00937126, -0.000211406, -5.66176e-05, 0.000430506, 0.00104938, 5.79268e-05, 0.0072504, -0.000842017, 0.000115244, 0.00702082, -9.67493e-05, 0.000115244, 0.000545297, -0.000842017, -0.00011398, 0.00730687, -0.00112866, 6.09754e-07, 0.00719301, 0.00110671, 6.09754e-07, 0.00713561, 7.4798e-05, 5.79268e-05, 2.87369e-05, 0.000877394, -0.00011398, 0.00713561)
@@ -163,13 +160,12 @@ _data = {
 &"player_idle": SubResource("Animation_4ntmi")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3rsb5"]
+radius = 0.3
+height = 1.8
+
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_2f8j2")
-
-[node name="CShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1.08553, 0)
-shape = SubResource("CapsuleShape3D_3rsb5")
-debug_color = Color(0.0150389, 0.405437, 1, 0.784314)
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
@@ -181,7 +177,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00135764, -0.288532, 0.003
 [node name="Espada PS1" parent="Camera/WeaponPivot" instance=ExtResource("2_4ntmi")]
 transform = Transform3D(0.950425, 0.542364, -0.111951, 0.322976, -0.723482, -0.76306, -0.449864, 0.626432, -0.784351, -0.0791931, 0.00120735, -0.837401)
 
-[node name="Hitbox" type="Area3D" parent="Camera/WeaponPivot/Espada PS1"]
+[node name="Hitbox" type="Area3D" parent="Camera/WeaponPivot/Espada PS1" groups=["Player"]]
 monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera/WeaponPivot/Espada PS1/Hitbox"]
@@ -209,6 +205,13 @@ offset_top = -43.0
 offset_right = 375.0
 offset_bottom = -19.0
 grow_vertical = 0
+
+[node name="CShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1.08553, 0)
+shape = SubResource("CapsuleShape3D_3rsb5")
+debug_color = Color(0.0150389, 0.405437, 1, 0.784314)
+
+[node name="InteractionLabel" parent="." instance=ExtResource("5_k53q1")]
 
 [connection signal="area_entered" from="Camera/WeaponPivot/Espada PS1/Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Camera/WeaponPivot/Espada PS1/Hitbox" to="." method="_on_hitbox_body_entered"]

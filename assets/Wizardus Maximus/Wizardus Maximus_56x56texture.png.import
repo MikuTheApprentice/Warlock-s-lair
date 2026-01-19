@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxetu25oeho8x"
-path.s3tc="res://.godot/imported/Doors_Map.png-c85166e53636ce1afec8325f73f4ad9e.s3tc.ctex"
+uid="uid://dh88naxumo4uk"
+path.s3tc="res://.godot/imported/Wizardus Maximus_56x56texture.png-12e6255c18749a95fc6ac9ce7d59f144.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "c51cae2df8c99fced25ad1cc5fca1b89"
+}
 
 [deps]
 
-source_file="res://assets/PSX_Dungeon/Textures/Doors_Map.png"
-dest_files=["res://.godot/imported/Doors_Map.png-c85166e53636ce1afec8325f73f4ad9e.s3tc.ctex"]
+source_file="res://assets/Wizardus Maximus/Wizardus Maximus_56x56texture.png"
+dest_files=["res://.godot/imported/Wizardus Maximus_56x56texture.png-12e6255c18749a95fc6ac9ce7d59f144.s3tc.ctex"]
 
 [params]
 
